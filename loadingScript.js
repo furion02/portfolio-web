@@ -30,10 +30,10 @@ function rotateQuotes() {
   quoteInterval = setInterval(showNextQuote, 4000); // 4-second interval
 }
 
-// Preload the index.html page
+// Preload the main.html page
 function preloadIndexPage() {
   iframe = document.createElement('iframe');
-  iframe.src = 'index.html'; // Preload index.html
+  iframe.src = 'main.html'; // Preload main.html
   iframe.style.display = 'none'; // Hide the iframe
   document.body.appendChild(iframe); // Append to the body (preload)
 
@@ -61,12 +61,12 @@ function handlePageReady() {
     // After 1 second of fading out, remove the preloader and redirect
     setTimeout(() => {
       preloader.style.display = 'none';
-      window.location.href = 'index.html'; // Redirect to index.html
+      window.location.href = 'main.html'; // Redirect to main.html
     }, 1000); // 1-second fade-out duration
 
   }, 7000); // 7-second delay to match the loading bar duration
 }
 
-// Start rotating quotes and preload index.html
+// Start rotating quotes and preload main.html
 rotateQuotes();
 preloadIndexPage();
