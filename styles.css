@@ -1,0 +1,362 @@
+/* Ensures the video takes up the entire background area */
+html, body {
+  overflow-x: hidden;
+}
+* {
+  box-sizing: border-box;
+}
+.container {
+  max-width: 100vw;
+  overflow-x: hidden;
+  margin: 0 auto;
+}
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* Pushes the video behind other content */
+}
+
+
+;
+
+
+/* Education Section */
+
+/* Skills Section */
+.skills {
+  position: absolute;
+  
+  padding: 40px 40px;
+  /* height: 450px; */
+  
+  width: 200px;
+}
+
+.skills h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+    text-align: left;
+    transform: translateX(500px);
+
+
+}
+
+/* CMD Box Styling for Skills */
+.cmd-box-large {
+  background-color: #000;
+  color: #fff;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  text-align: left;
+  max-width: 100%;
+  flex-grow: 1;
+  margin: 0 auto;
+}
+.cmd-boxes {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.cmd-box {
+  background-color: #000; /* CMD-style background */
+  color: #fff; /* Green text to match CMD */
+  font-family: 'Courier New', Courier, monospace; /* Monospace font */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Shadow for 3D effect */
+  text-align: left;
+  max-width: 30%;
+  flex-grow: 1;
+}
+
+/* CMD prompt styling for Skills */
+.cmd-prompt {
+  color: #fff; /* Blue prompt text */
+}
+
+/* Side Projects Section */
+.side-projects {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.side-projects h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* CMD Box Styling */
+.cmd-boxes {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.cmd-box {
+    background-color: #000; /* CMD-style background */
+    color: #fff; /* Green text to match CMD */
+    font-family: 'Courier New', Courier, monospace; /* Monospace font */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Shadow for 3D effect */
+    text-align: left;
+    max-width: 30%;
+    flex-grow: 1;
+}
+
+/* CMD prompt and input styling */
+.cmd-prompt {
+    color: #fff; /* Blue prompt text */
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 5px;
+}
+
+/* Command Input Styling */
+#cmd-input-1, #cmd-input-2, #cmd-input-3 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#cmd-command-1, #cmd-command-2, #cmd-command-3 {
+    flex-grow: 1;
+    background-color: #fff; /* CMD-style background */
+    color: #0f0; /* Green text */
+    border: none;
+    font-family: 'Courier New', Courier, monospace; /* Monospace font */
+    font-size: 1em;
+    padding: 5px;
+}
+
+#cmd-command-1:focus, #cmd-command-2:focus, #cmd-command-3:focus {
+    outline: none; /* No default outline */
+}
+
+#cmd-output-1, #cmd-output-2, #cmd-output-3 {
+    white-space: pre-wrap;
+    margin-bottom: 10px;
+}
+
+/* Button Styling (Optional) */
+button {
+    background-color: #333; /* Darker background for buttons */
+    color: #0f0; /* Green text */
+    border: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1em;
+    padding: 5px 10px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #444; /* Hover effect */
+}
+
+
+/* Work Section Styles */
+.work {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.work-item {
+  display: inline-block;
+  margin: 20px;
+  text-align: center;
+  max-width: 300px;
+  cursor: pointer;
+  transition: transform 0.3s;
+  position: relative;
+}
+
+.work-item:hover {
+  transform: scale(1.05);
+}
+
+.work-item img,
+.work-item video {
+  width: 258px; /* Fixed width */
+  height: 390px; /* Fixed height */
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+  transition: opacity 0.5s;
+}
+
+/* Flip Card Styles */
+.flip-card {
+  background-color: transparent;
+  width: 258px;
+  height: 390px;
+  perspective: 500px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 258px;
+  height: 390px;
+  text-align: center;
+  transition: transform 0.7s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 258px;
+  height: 390px;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  width: 258px;
+  height: 390px;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: #333;
+  width: 258px;
+  height: 390px;
+  color: black;
+  transform: rotateY(180deg);
+}
+
+
+video {
+  width: 258px;
+  height: 390px;
+    object-fit: cover; /* Ensure video fits within the card */
+}
+/* Modal styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+}
+
+.modal-content {
+  background-color: white;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  text-align: center;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+}
+
+.weather-details {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+.weather-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.weather-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 15px;
+}
+
+.temperature {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.weather-condition, .current-time {
+  font-size: 1.1em;
+  color: #666;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #333;
+}
+/* Responsive design for screens smaller than 768px (mobile devices) */
+@media only screen and (max-width: 768px) {
+  .container {
+    padding: 10px;
+    max-width: 100vw;
+  }
+  
+  .skills, .cmd-box, .cmd-box-large, .work-item {
+    width: 100%; /* Full width on mobile for better readability */
+    max-width: 100%;
+    padding: 20px; /* Reduced padding for smaller screens */
+  }
+  
+  .flip-card {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+
+  .flip-card-inner {
+    width: 100%;
+    height: auto;
+  }
+
+  .flip-card-front, .flip-card-back {
+    width: 100%;
+    height: auto;
+  }
+
+  .side-projects h2, .skills h2 {
+    font-size: 1.5em; /* Smaller font size for mobile */
+  }
+
+  button {
+    font-size: 1em; /* Adjust button font size */
+    padding: 5px; /* Reduced padding for smaller buttons */
+  }
+  
+  /* Adjust work-item for mobile */
+  .work-item img,
+  .work-item video {
+    width: 100%;
+    height: auto;
+  }
+}

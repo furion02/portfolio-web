@@ -1,0 +1,95 @@
+/* Preloader Styles */
+#preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff; /* Dark background */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  font-family: 'Roboto', sans-serif;
+  color: #000;
+  text-align: center;
+}
+
+.logo-container {
+  perspective: 1000px; /* 3D perspective for rotation */
+}
+
+.md-logo {
+  font-family: 'Great Vibes', cursive; /* Signature font */
+  font-size: 120px; /* Larger, signature style */
+  font-weight: 400;
+  color: #000000;
+  text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.5);
+  transform: rotateY(0deg);
+  animation: rotate3D 7s infinite linear; /* Slower rotation for elegance */
+  letter-spacing: 2px; /* Adjust spacing for signature look */
+  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.4); /* Subtle glowing effect */
+}
+
+.loading-text {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-top: 20px;
+  color: #000000;
+}
+
+/* Loading Bar Styles */
+.loading-bar-container {
+  width: 80%;
+  height: 8px;
+  background-color: #34495e;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 20px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.loading-bar {
+  height: 100%;
+  width: 0%;
+  background-color: #000000; /* Light blue bar */
+  border-radius: 20px;
+  animation: loadProgress 7s ease-in-out forwards; /* Sync with rotation */
+}
+
+@keyframes loadProgress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* 3D Rotating Animation */
+@keyframes rotate3D {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+/* Inspirational Quote Styling */
+#quote-text {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #000000;
+  margin-top: 20px;
+}
+
+/* 3D Rotating Animation */
+@keyframes rotate3D {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Screen with Video</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Fullscreen video background */
+        #loading-screen {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 9999;
+            color: #fff;
+        }
+
+        /* The video element covers the background */
+        #background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            filter: brightness(50%); /* Darkens the video for better text readability */
+        }
+
+        /* Elegant text animation */
+        #loading-screen h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+            opacity: 0;
+            animation: fadeInText 2s ease-in-out forwards;
+            display: none; /* Hide initially */
+        }
+
+        @keyframes fadeInText {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Start button */
+        #start-button {
+            width: 100px;
+            height: 100px;
+            border: 3px solid rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            background-color: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: rgba(255, 255, 255, 0.7);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #start-button:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Progress bar */
+        #progress-bar {
+            margin-top: 30px;
+            width: 50%;
+            height: 6px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            overflow: hidden;
+            display: none; /* Hide initially */
+        }
+
+        #progress-bar-fill {
+            width: 0;
+            height: 100%;
+            background-color: #ffffff;
+            border-radius: 5px;
+            animation: loadProgress 4s ease-in-out forwards;
+        }
+
+        @keyframes loadProgress {
+            0% {
+                width: 0%;
+            }
+            100% {
+                width: 100%;
+            }
+        }
+
+        /* Hide main content until loading is complete */
+        .main-content {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Video Background -->
+<div id="loading-screen">
+    <video autoplay muted loop id="background-video">
+        <source src="LV.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Start Button -->
+    <div id="start-button">Start</div>
+
+    <!-- Loading Text -->
+    <h1>Crafting Your Journey</h1>
+
+    <!-- Progress Bar -->
+    <div id="progress-bar">
+        <div id="progress-bar-fill"></div>
+    </div>
+</div>
+
+<script>
+    // When the "Start" button is clicked
+    document.getElementById('start-button').addEventListener('click', function() {
+        // Hide the start button
+        this.style.display = 'none';
+        
+        // Show the loading text
+        document.querySelector('#loading-screen h1').style.display = 'block';
+
+        // Show the progress bar and start the animation
+        document.getElementById('progress-bar').style.display = 'block';
+
+        // After the progress bar finishes, redirect to the index.html page
+        setTimeout(function() {
+            window.location.href = 'index.html'; // Redirect to index.html
+        }, 4000); // 4 seconds delay to match the animation
+    });
+</script>
+
+</body>
+</html>
